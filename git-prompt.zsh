@@ -63,7 +63,7 @@ autoload -U colors && colors
 setopt PROMPT_SUBST
 
 # Override PROMPT if it does not use the gitprompt function
-[[ "$PROMPT" != *gitprompt* && "$RPROMPT" != *gitprompt* ]] \
+[[ "$ZSH_GIT_PROMPT_NO_PROMPT" != 1 && "$PROMPT" != *gitprompt* && "$RPROMPT" != *gitprompt* ]] \
     && PROMPT='%B%40<..<%~ %b$(gitprompt)' \
     && PROMPT+='%(?.%(!.%F{white}❯%F{yellow}❯%F{red}.%F{blue}❯%F{cyan}❯%F{green})❯.%F{red}❯❯❯)%f '
 
